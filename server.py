@@ -700,7 +700,7 @@ class Handler(BaseHTTPRequestHandler):
         self.send_header("Access-Control-Allow-Headers", "Accept, Content-Type")
 
     def log_message(self, format, *args):
-        print(f"{self.address_string()} - {format % args}")
+        pass
 
 
 def main():

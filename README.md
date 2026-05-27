@@ -52,6 +52,12 @@ That script downloads `server.py` into:
 
 Then it starts the local service with `python3`.
 
+The script runs the service in the background, writes the process id to:
+
+```text
+~/.usage-remind/server.pid
+```
+
 Note: Only run the `curl | sh` version from a repository you trust, because it executes downloaded code on your machine.
 
 
@@ -131,4 +137,10 @@ If port `8765` is already in use, stop the older service first:
 ```bash
 lsof -ti tcp:8765
 kill <PID>
+```
+
+If you started it with `server.sh`, you can stop it with:
+
+```bash
+kill "$(cat ~/.usage-remind/server.pid)"
 ```
