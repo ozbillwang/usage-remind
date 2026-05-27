@@ -4,17 +4,29 @@ A tiny local web service for checking coding assistant usage windows.
 
 Right now it supports Codex usage only. The service is intentionally small so it can later grow provider adapters for Claude Code, Gemini, Grok, and others.
 
+<img width="765" height="479" alt="image" src="https://github.com/user-attachments/assets/84f9bbb1-5d1d-488e-aa8f-ab246ca00b1a" />
+
+## What It Shows
+
+The page shows:
+
+- Codex 5-hour usage remaining
+- Codex weekly usage remaining
+- reset time for each window
+- current plan type
+- last refresh time
+
+The page refreshes automatically every 5 seconds. The Refresh button does the same check immediately.
+
 ## Run
 
 ```bash
+git clone https://github.com/ozbillwang/usage-remind.git
+cd usage-remind
 python3 server.py
 ```
 
-Open:
-
-```text
-http://127.0.0.1:8765
-```
+Open http://127.0.0.1:8765
 
 API:
 
@@ -40,40 +52,9 @@ That script downloads `server.py` into:
 
 Then it starts the local service with `python3`.
 
-Python cannot run a GitHub page URL directly, so this will not work:
+Note: Only run the `curl | sh` version from a repository you trust, because it executes downloaded code on your machine.
 
-```bash
-python3 https://github.com/ozbillwang/usage-remind/server.py
-```
 
-If you prefer not to pipe a script into `sh`, download the Python file yourself:
-
-```bash
-curl -fsSL https://raw.githubusercontent.com/ozbillwang/usage-remind/main/server.py -o /tmp/usage-remind.py
-python3 /tmp/usage-remind.py
-```
-
-Or clone the repo:
-
-```bash
-git clone https://github.com/ozbillwang/usage-remind.git
-cd usage-remind
-python3 server.py
-```
-
-Only run the `curl | sh` version from a repository you trust, because it executes downloaded code on your machine.
-
-## What It Shows
-
-The page shows:
-
-- Codex 5-hour usage remaining
-- Codex weekly usage remaining
-- reset time for each window
-- current plan type
-- last refresh time
-
-The page refreshes automatically every 5 seconds. The Refresh button does the same check immediately.
 
 ## API Shape
 
