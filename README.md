@@ -4,6 +4,8 @@ A tiny local web service for checking coding assistant usage windows.
 
 Right now it supports Codex usage only. The service is intentionally small so it can later grow provider adapters for Claude Code, Gemini, Grok, and others.
 
+This service is pretty useful for setting `/goal` in Codex when you want to keep your AI agent running while avoiding running out of usage.
+
 <img width="765" height="479" alt="image" src="https://github.com/user-attachments/assets/84f9bbb1-5d1d-488e-aa8f-ab246ca00b1a" />
 
 ## What It Shows
